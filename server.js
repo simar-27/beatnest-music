@@ -9,6 +9,11 @@ connectDB();
 
 const app = express();
 
+// ✅ ADD THIS ROOT ROUTE (FIX)
+app.get('/', (req, res) => {
+    res.send('Backend is running 🚀');
+});
+
 app.use(cors());
 app.use(express.json());
 app.use('/songs', express.static(path.join(__dirname, '../songs')));
